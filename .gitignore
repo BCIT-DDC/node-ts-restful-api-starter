@@ -1,0 +1,10 @@
+/dist
+/.idea
+/coverage
+/node_modules
+.DS_Store
+.env*
+!.env
+*.log
+
+/src/prisma/migrations
