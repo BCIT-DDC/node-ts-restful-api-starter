@@ -31,7 +31,8 @@ You can access the REST API of the server using the following endpoints:
 
 <pre>
 .
-├── <img src="./assets/icons/folder-resource.svg" style="display: inline-block; margin: 0"  height="15"/> assets
+├── <img src="./assets/icons/folder-resource.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> assets
+│   └── /images
 │   └── /images
 ├── /docs
 │   └── /contributing
