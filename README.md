@@ -2,7 +2,6 @@
 
 ## Introduction
 
-
 ## Using the REST API
 
 You can access the REST API of the server using the following endpoints:
@@ -118,7 +117,6 @@ You can access the REST API of the server using the following endpoints:
 └── <img src="./assets/icons/tsconfig.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> tsconfig.json
 
 </pre>
-
 
 ## Linting
 
