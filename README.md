@@ -158,6 +158,8 @@ You can access the REST API of the server using the following endpoints:
 
 </pre>
 
+ <img src="./assets/icons/tsconfig.svg"   height="24"/>
+
 ## Linting
 
 ## License
