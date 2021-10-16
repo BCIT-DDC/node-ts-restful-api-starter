@@ -1,7 +1,21 @@
-/* eslint-disable no-param-reassign */
 import request from 'supertest';
+import { Application } from 'express';
 
-import app from '../src/server';
+import App from '../../src/app';
+import Routes from '../../src/api/routes';
+
+let application: App;
+let app: Application;
+
+beforeAll(() => {
+    application = new App([...Routes]);
+    application.listen();
+    app = application.server;
+});
+
+afterAll(() => {
+    application.close();
+});
 
 // Note: These tests expect database to be seeded with data
 describe('[GET] /', () => {

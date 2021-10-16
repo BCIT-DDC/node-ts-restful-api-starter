@@ -1,9 +1,8 @@
 import App from './app';
 
-import HomeRoute from './api/routes/home.route';
-import APIRoute from './api/routes/api.route';
+import Routes from './api/routes';
 
-const app: App = new App([HomeRoute, APIRoute]);
+const app: App = new App([...Routes]);
 
 app.listen();
 

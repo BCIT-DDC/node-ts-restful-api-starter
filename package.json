@@ -22,7 +22,7 @@
     "prisma:init": "prisma init",
     "prisma:migrate": "prisma migrate dev --name init --schema ./src/prisma/schema.prisma",
     "prisma:generate": "prisma generate --schema ./src/prisma/schema.prisma",
-    "prisma:seed": "prisma db seed --schema ./src/prisma/schema.prisma",
+    "prisma:seed": "prisma db seed",
     "serve-debug": "nodemon --inspect dist/src/server.js",
     "serve": "node dist/src/server.js",
     "start": "npm run serve",

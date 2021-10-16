@@ -1,14 +1,18 @@
+import { Server } from 'http';
 import express, { Application, Router } from 'express';
 
 import { logger } from '../api/utils/logger.util';
 import { PORT, ENVIRONMENT } from '../api/utils/secrets.util';
 import errorMiddleware from '../api/middleware/error.middleware';
 import expressMiddleware from '../api/middleware/express.middleware';
+import ApplicationException from '../api/errors/application.exception';
 
 export default class App {
     private readonly _env: string;
 
     private readonly _app: Application;
+
+    private _server!: Server;
 
     private readonly _port: string | number;
 
@@ -34,8 +38,24 @@ export default class App {
         return this._app;
     }
 
+    public close(): void {
+        if (this._server) {
+            this._server.close(err => {
+                if (err) {
+                    throw new ApplicationException(
+                        '🚨 Error occurred while attempting to close server.',
+                    );
+                } else {
+                    logger.info('💤 Successfully closed server');
+                }
+            });
+        } else {
+            logger.warn('⚠️ Server connection is already closed.');
+        }
+    }
+
     public listen(): void {
-        this._app.listen(this._port, () => {
+        this._server = this._app.listen(this._port, () => {
             if (this.env === 'development') {
                 logger.info(
                     `🚀 Application Started; Listening on port: http://localhost:${this.port}`,
