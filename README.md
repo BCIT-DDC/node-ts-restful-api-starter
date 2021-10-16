@@ -156,9 +156,9 @@ You can access the REST API of the server using the following endpoints:
 ├── <img src="./assets/icons/lock.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> SECURITY.md
 └── <img src="./assets/icons/tsconfig.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> tsconfig.json
 
-</pre>
 
- <img src="./assets/icons/tsconfig.svg"   height="24"/>
+<img src="./assets/icons/tsconfig.svg"   height="24"/>
+</pre>
 
 ## Linting
 
