@@ -39,7 +39,7 @@ npm run prisma:seed
 npm run dev
 ```
 
-The server is now running on `http://localhost:3000`. You can now the API requests, e.g. [`http://localhost:3000/users`](http://localhost:3000/users).
+The server is now running on `http://localhost:3000`. You can now the API requests, e.g. [`http://localhost:3000/api/users`](http://localhost:3000/api/users).
 
 ## Using the REST API
 
@@ -47,30 +47,30 @@ You can access the REST API of the server using the following endpoints:
 
 ### `GET`
 
--   `/post/:id`: Fetch a single post by its `id`
--   `/user/:id/drafts`: Fetch user's drafts by their `id`
--   `/users`: Fetch all users
+-   `/api/post/:id`: Fetch a single post by its `id`
+-   `/api/user/:id/drafts`: Fetch user's drafts by their `id`
+-   `/api/users`: Fetch all users
 
 ### `POST`
 
--   `/post`: Create a new post
+-   `/api/post`: Create a new post
     -   Body:
         -   `title: String` (required): The title of the post
         -   `content: String` (optional): The content of the post
         -   `authorEmail: String` (required): The email of the user that creates the post
--   `/signup`: Create a new user
+-   `/api/signup`: Create a new user
     -   Body:
         -   `email: String` (required): The email address of the user
         -   `name: String` (optional): The name of the user
 
 ### `PUT`
 
--   `/publish/:id`: Toggle the publish value of a post by its `id`
--   `/post/:id/views`: Increases the `viewCount` of a `Post` by one `id`
+-   `/api/publish/:id`: Toggle the publish value of a post by its `id`
+-   `api//post/:id/views`: Increases the `viewCount` of a `Post` by one `id`
 
 ### `DELETE`
 
--   `/post/:id`: Delete a post by its `id`
+-   `/api/post/:id`: Delete a post by its `id`
 
 ## Project Structure
 
@@ -153,8 +153,8 @@ You can access the REST API of the server using the following endpoints:
 ├── <img src="./assets/icons/nodejs.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> package-lock.json
 ├── <img src="./assets/icons/nodejs.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> package.json
 ├── <img src="./assets/icons/readme.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> README.md
-├── <img src="./assets/icons/lock.svg" style="display: inline-block; margin: 0; padding:0 background-color:transparent"  height="12"/> SECURITY.md
-└── <img src="./assets/icons/tsconfig.svg" style="display: inline-block; margin: 0; padding:0; background: rgba(0,0,0,0.0);"  height="12"/> tsconfig.json
+├── <img src="./assets/icons/lock.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> SECURITY.md
+└── <img src="./assets/icons/tsconfig.svg" style="display: inline-block; margin: 0; padding:0;"  height="12"/> tsconfig.json
 </pre>
 
 ## Linting
