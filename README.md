@@ -21,7 +21,7 @@ npm install
 
 ### 2. Create and seed the database
 
-Run the following command to create your SQLite database file. This also creates the `User` and `Post` tables that are defined in [`prisma/schema.prisma`](./prisma/schema.prisma):
+Run the following command to create your SQLite database file. This also creates the `User` and `Post` tables that are defined in [`./src/prisma/schema.prisma`](./src/prisma/schema.prisma):
 
 ```sh
 npm run prisma:migrate
@@ -153,8 +153,8 @@ You can access the REST API of the server using the following endpoints:
 ├── <img src="./assets/icons/nodejs.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> package-lock.json
 ├── <img src="./assets/icons/nodejs.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> package.json
 ├── <img src="./assets/icons/readme.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> README.md
-├── <img src="./assets/icons/lock.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> SECURITY.md
-└── <a src="./assets/icons/tsconfig.svg" style="display: inline-block; margin: 0; padding:0; background-color:transparent"  height="12"/> tsconfig.json
+├── <img src="./assets/icons/lock.svg" style="display: inline-block; margin: 0; padding:0 background-color:transparent"  height="12"/> SECURITY.md
+└── <img src="./assets/icons/tsconfig.svg" style="display: inline-block; margin: 0; padding:0; background: rgba(0,0,0,0.0);"  height="12"/> tsconfig.json
 </pre>
 
 ## Linting
