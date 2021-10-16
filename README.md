@@ -154,7 +154,7 @@ You can access the REST API of the server using the following endpoints:
 ├── <img src="./assets/icons/nodejs.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> package.json
 ├── <img src="./assets/icons/readme.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> README.md
 ├── <img src="./assets/icons/lock.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> SECURITY.md
-└── <img src="./assets/icons/tsconfig.svg" style="display: inline-block; margin: 0; padding:0; background-color:transparent"  height="12"/> tsconfig.json
+└── <a src="./assets/icons/tsconfig.svg" style="display: inline-block; margin: 0; padding:0; background-color:transparent"  height="12"/> tsconfig.json
 </pre>
 
 ## Linting
