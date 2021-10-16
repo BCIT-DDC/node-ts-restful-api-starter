@@ -8,13 +8,13 @@
 
 Clone this repository:
 
-```sh
+```
 git clone git@github.com:BCIT-DDC/node-ts-restful-api-starter.git
 ```
 
 Install npm dependencies:
 
-```sh
+```
 cd node-ts-restful-api-starter
 npm install
 ```
@@ -23,19 +23,19 @@ npm install
 
 Run the following command to create your SQLite database file. This also creates the `User` and `Post` tables that are defined in [`./src/prisma/schema.prisma`](./src/prisma/schema.prisma):
 
-```sh
+```
 npm run prisma:migrate
 ```
 
 Now, seed the database with the sample data in [`./src/prisma/db.seed.ts`](./src/prisma/db.seed.ts) by running the following command:
 
-```sh
+```
 npm run prisma:seed
 ```
 
 ### 3. Start the REST API server
 
-```sh
+```
 npm run dev
 ```
 
@@ -66,7 +66,7 @@ You can access the REST API of the server using the following endpoints:
 ### `PUT`
 
 -   `/api/publish/:id`: Toggle the publish value of a post by its `id`
--   `api//post/:id/views`: Increases the `viewCount` of a `Post` by one `id`
+-   `api/post/:id/views`: Increases the `viewCount` of a `Post` by one `id`
 
 ### `DELETE`
 
