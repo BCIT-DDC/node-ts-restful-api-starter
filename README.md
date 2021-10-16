@@ -2,6 +2,45 @@
 
 ## Introduction
 
+## Getting Started
+
+### 1. Download starter and install dependencies
+
+Clone this repository:
+
+```sh
+git clone git@github.com:BCIT-DDC/node-ts-restful-api-starter.git
+```
+
+Install npm dependencies:
+
+```sh
+cd node-ts-restful-api-starter
+npm install
+```
+
+### 2. Create and seed the database
+
+Run the following command to create your SQLite database file. This also creates the `User` and `Post` tables that are defined in [`prisma/schema.prisma`](./prisma/schema.prisma):
+
+```sh
+npm run prisma:migrate
+```
+
+Now, seed the database with the sample data in [`./src/prisma/db.seed.ts`](./src/prisma/db.seed.ts) by running the following command:
+
+```sh
+npm run prisma:seed
+```
+
+### 3. Start the REST API server
+
+```sh
+npm run dev
+```
+
+The server is now running on `http://localhost:3000`. You can now the API requests, e.g. [`http://localhost:3000/users`](http://localhost:3000/users).
+
 ## Using the REST API
 
 You can access the REST API of the server using the following endpoints:
@@ -51,6 +90,7 @@ You can access the REST API of the server using the following endpoints:
 │   │   │   ├── <img src="./assets/icons/typescript.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> post.controller.ts
 │   │   │   └── <img src="./assets/icons/typescript.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> user.controller.ts
 │   │   ├── <img src="./assets/icons/folder-error.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> errors
+│   │   │   ├── <img src="./assets/icons/typescript.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> application.exception.ts
 │   │   │   ├── <img src="./assets/icons/typescript.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> database.exception.ts
 │   │   │   ├── <img src="./assets/icons/typescript.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> http.exception.ts
 │   │   │   └── <img src="./assets/icons/typescript.svg" style="display: inline-block; margin: 0; padding:0"  height="12"/> validation.exception.ts

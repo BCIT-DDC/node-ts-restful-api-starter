@@ -18,6 +18,7 @@ afterAll(() => {
 });
 
 // Note: These tests expect database to be seeded with data
+// TODO: Integrate more robust unit tests
 describe('[GET] /', () => {
     it('Should return 200 OK', done => {
         // eslint-disable-next-line prettier/prettier
