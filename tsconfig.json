@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",        
+    "target": "ES6",        
     "module": "commonjs",                        
     "lib": ["dom", "dom.iterable", "ESNext"],    
     "outDir": "./dist",  
@@ -23,7 +23,8 @@
     "emitDecoratorMetadata": true,
     "pretty": true,
     "skipLibCheck": true,                     
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": ["jest"]
   },
     "include": ["src/**/*.ts", "src/**/*.json", ".env"],
     "exclude": ["node_modules"]
