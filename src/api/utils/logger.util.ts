@@ -11,7 +11,7 @@ const { combine, timestamp, printf, prettyPrint, colorize, errors } = format;
 // Directories
 let logDir = path.join(__dirname, '..', '..', '..', 'logs');
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
     logDir = path.join(__dirname, '..', '..', '..', '..', 'logs');
 }
 const errorsDir = path.join(logDir, 'errors');
