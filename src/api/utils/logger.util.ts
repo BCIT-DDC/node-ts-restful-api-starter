@@ -4,12 +4,16 @@ import winston, { format, LoggerOptions } from 'winston';
 
 import IOHandler from './iohandler.util';
 import loggerConfig from '../../config/logger.config';
-import { ENVIRONMENT } from './secrets.util';
 
 const { combine, timestamp, printf, prettyPrint, colorize, errors } = format;
 
 // Directories
-const logDir = path.join(__dirname, '..', '..', '..', '..', 'logs');
+// Directories
+let logDir = path.join(__dirname, '..', '..', '..', 'logs');
+
+if (process.env.NODE_ENV !== 'production') {
+    logDir = path.join(__dirname, '..', '..', '..', '..', 'logs');
+}
 const errorsDir = path.join(logDir, 'errors');
 
 IOHandler.createDirs([logDir, errorsDir]);
