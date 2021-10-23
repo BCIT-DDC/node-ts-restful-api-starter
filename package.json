@@ -35,7 +35,8 @@
     "test": "cross-env NODE_ENV=test jest -i --colors --verbose --coverage --detectOpenHandles",
     "test:watch": "npm run test -- --watchAll",
     "watch-node": "nodemon dist/src/server.js",
-    "watch-ts": "tsc -w"
+    "watch-ts": "tsc -w",
+    "prepare": "husky install"
   },
   "keywords": [
     "Nodejs",
