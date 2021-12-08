@@ -19,21 +19,7 @@ cd node-ts-restful-api-starter
 npm install
 ```
 
-### 2. Create and seed the database
-
-Run the following command to create your SQLite database file. This also creates the `User` and `Post` tables that are defined in [`./src/prisma/schema.prisma`](./src/prisma/schema.prisma):
-
-```
-npm run prisma:migrate
-```
-
-Now, seed the database with the sample data in [`./src/prisma/db.seed.ts`](./src/prisma/db.seed.ts) by running the following command:
-
-```
-npm run prisma:seed
-```
-
-### 3. Start the REST API server
+### 2. Start the REST API server
 
 ```
 npm run dev
