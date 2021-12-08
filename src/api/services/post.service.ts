@@ -1,6 +1,6 @@
 import { PrismaClient, Post } from '@prisma/client';
-import DatabaseException from '../errors/database.exception';
-import { logger } from '../utils/logger.util';
+import DatabaseException from '@errors/database.exception';
+import { logger } from '@utils/logger.util';
 
 const prisma = new PrismaClient();
 

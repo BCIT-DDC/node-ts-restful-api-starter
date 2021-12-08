@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
-import IOHandler from './iohandler.util';
-import { logger } from './logger.util';
+import IOHandler from '@utils/iohandler.util';
+import { logger } from '@utils/logger.util';
 
 if (IOHandler.dirExists('.env')) {
     logger.info('Using .env file to supply config environment variables');

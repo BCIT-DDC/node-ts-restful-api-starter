@@ -1,11 +1,11 @@
 import { Server } from 'http';
 import express, { Application, Router } from 'express';
 
-import { logger } from '../api/utils/logger.util';
-import { PORT, ENVIRONMENT } from '../api/utils/secrets.util';
-import errorMiddleware from '../api/middleware/error.middleware';
-import expressMiddleware from '../api/middleware/express.middleware';
-import ApplicationException from '../api/errors/application.exception';
+import { logger } from '@utils/logger.util';
+import { PORT, ENVIRONMENT } from '@utils/secrets.util';
+import errorMiddleware from '@middleware/error.middleware';
+import expressMiddleware from '@middleware/express.middleware';
+import ApplicationException from '@errors/application.exception';
 
 export default class App {
     private readonly _env: string;
