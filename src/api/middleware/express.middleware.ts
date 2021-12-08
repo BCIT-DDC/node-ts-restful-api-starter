@@ -5,8 +5,8 @@ import helmet from 'helmet';
 import compression from 'compression';
 import express, { Application } from 'express';
 
-import { logger, stream } from '../utils/logger.util';
-import { CSP, CSPDirectives } from '../../config/helmet.config';
+import { logger, stream } from '@utils/logger.util';
+import { CSP, CSPDirectives } from '@config/helmet.config';
 
 const publicDir = path.join(__dirname, '..', '..', 'public');
 

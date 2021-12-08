@@ -2,8 +2,8 @@ import path from 'path';
 import WinstonDaily from 'winston-daily-rotate-file';
 import winston, { format, LoggerOptions } from 'winston';
 
-import IOHandler from './iohandler.util';
-import loggerConfig from '../../config/logger.config';
+import IOHandler from '@utils/iohandler.util';
+import loggerConfig from '@config/logger.config';
 
 const { combine, timestamp, printf, prettyPrint, colorize, errors } = format;
 

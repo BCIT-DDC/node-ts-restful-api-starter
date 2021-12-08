@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 
-import PostService from '../services/post.service';
-import { logger } from '../utils/logger.util';
+import PostService from '@services/post.service';
+import { logger } from '@utils/logger.util';
 
 export default class PostController {
     public static handleCreatePost = async (

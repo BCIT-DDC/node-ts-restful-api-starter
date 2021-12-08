@@ -1,15 +1,15 @@
 {
-  "name": "restful-api-typescript-starter",
-  "description": "Node RESTful API using Express and TS",
+  "name": "dictionary-generation-rest-service",
+  "description": "Generates Dictionary for Books via Fandom",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server.ts",
   "directories": {
     "lib": "lib",
     "test": "tests"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BCIT-DDC/node-ts-restful-api-starter"
+    "url": ""
   },
   "engines": {
     "node": ">=12.0.0"
@@ -18,25 +18,25 @@
     "seed": "ts-node ./src/prisma/db.seed.ts"
   },
   "scripts": {
-    "build": "npm run clean && tsc",
+    "build": "npm run clean && tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "clean": "rimraf dist/",
     "copy-files": "ts-node scripts/copy-files.script.ts",
-    "dev": "cross-env NODE_ENV=development ts-node-dev --respawn -- src/server.ts",
+    "dev": "cross-env NODE_ENV=development ts-node-dev --max-old-space-size=8192 --expose-gc -r tsconfig-paths/register --respawn  -- src/server.ts",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
     "postinstall": "npm run prisma:generate",
     "postbuild": "npm run copy-files",
+    "prepare": "husky install",
     "prisma:init": "prisma init",
     "prisma:migrate": "prisma migrate dev --name init --schema ./src/prisma/schema.prisma",
     "prisma:generate": "prisma generate --schema ./src/prisma/schema.prisma",
     "prisma:seed": "prisma db seed",
     "serve-debug": "nodemon --inspect dist/src/server.js",
-    "serve": "cross-env NODE_ENV=production node dist/src/server.js",
+    "serve": "cross-env NODE_ENV=production node  --max-old-space-size=7000  -r tsconfig-paths/register dist/src/server.js",
     "start": "npm run serve",
-    "test": "cross-env NODE_ENV=test jest -i --colors --verbose --coverage --detectOpenHandles",
+    "test": "cross-env NODE_ENV=test jest -i --colors --verbose --coverage --detectOpenHandles --passWithNoTests",
     "test:watch": "npm run test -- --watchAll",
     "watch-node": "nodemon dist/src/server.js",
-    "watch-ts": "tsc -w",
-    "prepare": "husky install"
+    "watch-ts": "tsc -w"
   },
   "keywords": [
     "Nodejs",
@@ -54,6 +54,10 @@
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
+    "async": "^3.2.2",
+    "axios": "^0.24.0",
+    "cheerio": "^1.0.0-rc.10",
+    "cli-progress": "^3.9.1",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
@@ -62,17 +66,25 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-tsdoc": "^0.2.14",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
+    "module-alias": "^2.2.2",
     "morgan": "^1.10.0",
+    "mwn": "^1.11.4",
+    "object-sizeof": "^1.6.1",
+    "ora": "^5.4.1",
+    "p-limit": "^3.1.0",
     "prettier": "^2.4.1",
     "shelljs": "^0.8.4",
     "supertest": "^6.1.6",
     "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.5"
+    "winston-daily-rotate-file": "^4.5.5",
+    "xml": "^1.0.1"
   },
   "devDependencies": {
+    "@types/async": "^3.2.9",
+    "@types/cheerio": "^0.22.30",
+    "@types/cli-progress": "^3.9.2",
     "@types/compression": "^1.7.2",
     "@types/cors": "^2.8.12",
     "@types/jest": "^27.0.2",
@@ -80,7 +92,9 @@
     "@types/node": "^16.10.4",
     "@types/swagger-ui-express": "^4.1.3",
     "concurrently": "^6.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-tsdoc": "^0.2.14",
     "husky": "^7.0.4",
     "jest": "^27.2.5",
     "nodemon": "^2.0.13",
@@ -89,6 +103,21 @@
     "ts-jest": "^27.0.5",
     "ts-node": "^10.3.0",
     "ts-node-dev": "^1.1.8",
+    "tsc-alias": "^1.4.0",
+    "tsconfig-paths": "^3.11.0",
     "typescript": "^4.4.4"
+  },
+  "_moduleAliases": {
+    "@config/*": "dist/src/config/*",
+    "@controllers/*": "dist/src/api/controllers/*",
+    "@errors/*": "dist/src/api/errors/*",
+    "@interfaces/*": "dist/src/api/interfaces/*",
+    "@models/*": "dist/src/api/models/*",
+    "@middleware/*": "dist/src/api/middleware/*",
+    "@routes/*": "dist/src/api/routes/*",
+    "@services/*": "dist/src/api/services/*",
+    "@utils/*": "dist/src/api/utils/*",
+    "@helpers/*": "dist/src/api/helpers/*",
+    "@validators/*": "dist/src/api/validators/*"
   }
 }
