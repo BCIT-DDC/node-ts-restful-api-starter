@@ -1,6 +1,6 @@
 {
-  "name": "dictionary-generation-rest-service",
-  "description": "Generates Dictionary for Books via Fandom",
+  "name": "node-ts-restful-api-starter",
+  "description": "Node TS RESTful API Starter",
   "version": "1.0.0",
   "main": "server.ts",
   "directories": {
